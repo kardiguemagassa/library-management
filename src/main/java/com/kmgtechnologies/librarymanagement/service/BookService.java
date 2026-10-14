@@ -1,6 +1,7 @@
 package com.kmgtechnologies.librarymanagement.service;
 
 import com.kmgtechnologies.librarymanagement.dto.BookRequest;
+import com.kmgtechnologies.librarymanagement.exception.BookNotFoundException;
 import com.kmgtechnologies.librarymanagement.model.Book;
 import com.kmgtechnologies.librarymanagement.repository.BookRepository;
 import org.springframework.stereotype.Service;
