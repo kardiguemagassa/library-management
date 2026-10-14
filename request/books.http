@@ -1,0 +1,68 @@
+
+### Create book (201 Created)
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "publicationYear": 2008
+}
+
+### Create another book (201 Created)
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Effective Java",
+  "author": "Joshua Bloch",
+  "publicationYear": 2018
+}
+
+### Get all books (200 OK)
+GET http://localhost:8080/api/books
+
+### Get book by ID (200 OK)
+GET http://localhost:8080/api/books/1
+
+### Update book (200 OK)
+PUT http://localhost:8080/api/books/1
+Content-Type: application/json
+
+{
+  "title": "Clean Code - Updated",
+  "author": "Robert C. Martin",
+  "publicationYear": 2009
+}
+
+### Get updated book (200 OK)
+GET http://localhost:8080/api/books/1
+
+### Delete book (204 No Content)
+DELETE http://localhost:8080/api/books/1
+
+### Get deleted book (404 Not Found)
+GET http://localhost:8080/api/books/1
+
+### Get unknown book (404 Not Found)
+GET http://localhost:8080/api/books/999
+
+### Create book with empty title (400 Bad Request)
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": "Robert C. Martin",
+  "publicationYear": 2008
+}
+
+### Create book with empty author (400 Bad Request)
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "",
+  "publicationYear": 2008
+}
