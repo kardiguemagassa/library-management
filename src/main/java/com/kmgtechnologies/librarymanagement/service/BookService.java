@@ -20,8 +20,8 @@ public class BookService {
         return repository.findAll();
     }
 
-    public void getBookById(Long id) {
-        repository.findById(id).orElseThrow(() -> new BookNotFoundException(id));
+    public Book getBookById(Long id) {
+         return repository.findById(id).orElseThrow(() -> new BookNotFoundException(id));
     }
 
     public Book createBook(BookRequest request) {
@@ -34,6 +34,7 @@ public class BookService {
     }
 
     public void deleteBook(Long id) {
-        getBookById(id); repository.deleteById(id);
+        getBookById(id);
+        repository.deleteById(id);
     }
 }
